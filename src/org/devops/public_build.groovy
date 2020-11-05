@@ -16,7 +16,7 @@ def checkoutSCM(branch,repoURL,credential){
 					scm: [$class: 'GitSCM',],
 						branches: [[name: branch]],
 							extensions: [[$class: 'RelativeTargetDirectory',
-							relativeTargetDir: repoURL.split('[/\\.]+').[-2].trim()],
+							relativeTargetDir: repoURL.split('[/\\.]+')[-2].trim()],
 									[$class: 'CleanBeforeCheckout']]],
 							userRemoteConfigs: [[credentialsId: credential, url: repoURL]]]		
 }
