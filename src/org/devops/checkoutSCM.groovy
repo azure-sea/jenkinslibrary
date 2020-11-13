@@ -8,6 +8,6 @@ def checkoutSCM(branch,repoURL,credential){
 						branches: [[name: branch]],
 							extensions: [[$class: 'RelativeTargetDirectory',
 							relativeTargetDir: repoURL.split('[/\\.]+')[-2].trim()],
-									[$class: 'CleanBeforeCheckout']],
+							[$class: 'CleanBeforeCheckout']],
 							userRemoteConfigs: [[credentialsId: credential, url: repoURL]]]		
 }
